@@ -1,7 +1,7 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-     <div class="row">
+        <div class="row">
 		<div class="col-lg-6">
 			<div class="box-element" id="form-wrapper">
 				<form id="form">
@@ -43,7 +43,8 @@
 			<br>
 			<div class="box-element hidden" id="payment-info">
 				<small>Paypal Options</small>
-				<!--<button id="make-payment">Make payment</button>-->
+				<button id="make-payment" onclick="showPopup()">Make payment</button>
+
 				<div id="paypal-button-container"></div>
 			</div>
 			
@@ -102,6 +103,13 @@
 
         }).render('#paypal-button-container');
     </script>
+
+	<script type="text/javascript">
+		function showPopup() {
+			alert("Transaction Completed");
+		}
+	</script>
+	
 
 	<script type="text/javascript">
 		var shipping = '{{order.shipping}}'
